@@ -36,6 +36,10 @@ def validate(query_params, json_object):
 
     return True
 
+@app.route("/", methods=["GET"])
+def api_check():
+    return jsonify({'success':True, 'result':"API check"}),200
+    
 @app.route("/search", methods=["GET"])
 def search_comments():
     # Define the default query parameters
